@@ -15,7 +15,7 @@ public class Servidor{
 		datagramSocket.getLocalPort());
 	}
 	
-	public String  receive() throws IOException{
+	public byte[]  receive() throws IOException{
 		//Cria o datagrama para receber uma mensagem.
 		byte [] bufferRecebimento = new byte[1024];
 		datagramaRecebimento = new
@@ -23,8 +23,8 @@ public class Servidor{
 		//Aguarda ate o recebimento de uma mensagem.
 		datagramSocket.receive(datagramaRecebimento);
 		bufferRecebimento = datagramaRecebimento.getData();
-		String mensagem = new String(bufferRecebimento);
-		return mensagem;
+		
+		return bufferRecebimento;
 	}
 
 	public void send(String message) throws IOException {
@@ -53,7 +53,7 @@ public static void main(String args []) throws IOException{
 	Servidor server = new Servidor(5051);
 
 	
-	String mensagem=server.receive();
+	String mensagem=new String(server.receive());
 	System.out.println("Servidor UDP recebeu a mensagem < "+ mensagem);
 	
 	System.out.println("Preparando uma resposta");

@@ -32,7 +32,7 @@ public class ServidorParImpar extends Servidor{
 	
 	public static void main(String [] args) throws IOException {
 		 ServidorParImpar server= new ServidorParImpar(5000);
-		 String msg = server.receive();
+		 String msg = new String(server.receive())+"\"" ;
 
 		 System.out.println("--> Mensagem recebida do cliente: " + msg);
 
