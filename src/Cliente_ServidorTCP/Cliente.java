@@ -1,4 +1,4 @@
-package Cliente_Servidor;
+package Cliente_ServidorTCP;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

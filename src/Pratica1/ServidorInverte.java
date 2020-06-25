@@ -2,7 +2,7 @@ package Pratica1;
 
 import java.io.IOException;
 
-import Cliente_Servidor.Servidor;
+import Cliente_ServidorTCP.Servidor;
 
 public class ServidorInverte extends Servidor{
 	public ServidorInverte(int port) throws IOException {

@@ -3,7 +3,7 @@ package Pratica1;
 import java.io.IOException;
 import java.util.Scanner;
 
-import Cliente_Servidor.Cliente;
+import Cliente_ServidorTCP.Cliente;
 
 public class ClienteRun {
 	

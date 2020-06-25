@@ -1,8 +1,10 @@
-package Pratica1;
+package Pratica2;
+
 
 import java.io.IOException;
+import java.net.DatagramPacket;
 
-import Cliente_ServidorTCP.Servidor;
+import Cliente_ServidorUDP.Servidor;
 
 public class ServidorParImpar extends Servidor{
 	public ServidorParImpar(int port) throws IOException {
@@ -19,27 +21,29 @@ public class ServidorParImpar extends Servidor{
 			valor= ""+(message*11);
 		}
 		
+		byte[] resultado= valor.getBytes();
 		 System.out.println("--> Servidor enviando mensagem: " + valor);
-		this.getFluxoSaida().writeUTF(valor); //Envia uma string. 
+		 
+		 DatagramPacket pacoteEnvio = new DatagramPacket (resultado,
+					resultado.length, this.getDatagramaRecebimento().getAddress(),
+					this.getDatagramaRecebimento().getPort());
+		this.getDatagramSocket().send(pacoteEnvio); //Envia uma string. 
 	}
 	
 	public static void main(String [] args) throws IOException {
-		ServidorParImpar server= new ServidorParImpar(5000);
-		server.accept();
-		
+		 ServidorParImpar server= new ServidorParImpar(5000);
 		 String msg = server.receive();
 
 		 System.out.println("--> Mensagem recebida do cliente: " + msg);
 
-
+		 //Erro input string
 		 server.send(Integer.parseInt(msg));
 		 
-		 server.closeClientConnection();
 		 
 		 System.out.println("*****Conexão finalizada*****\n");
 		 //Fechando o servidor.
+
 		 
-		server.closeClientConnection();
-		server.closeServer();
+		server.close();
 	}
 }
