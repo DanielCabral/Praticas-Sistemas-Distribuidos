@@ -16,7 +16,7 @@ public class TesteQuestao2 {
 		Scanner sc=new Scanner(System.in);
 		
 		System.out.print("Digite a mensagem: ");
-		
+		 
 		String mensagem = sc.next();
 		
 		thread.setMensagem(mensagem);
