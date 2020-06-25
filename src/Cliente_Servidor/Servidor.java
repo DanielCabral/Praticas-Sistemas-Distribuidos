@@ -1,4 +1,4 @@
-package Pratica1;
+package Cliente_Servidor;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -6,7 +6,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 public class Servidor {
 	
-	private String addresss;
 	private int port;
 	ServerSocket serverSocket; 
 	private DataInputStream fluxoEntrada;
@@ -15,13 +14,12 @@ public class Servidor {
 	
 
 	
-public Servidor(String addresss, int port) throws IOException {
+public Servidor(int port) throws IOException {
 		super();
-		this.addresss = addresss;
 		this.port = port;
 		
 		serverSocket=new ServerSocket(5000);
-				
+		System.out.println(" Servidor Iniciado... ");
 	}
 
 
@@ -42,8 +40,8 @@ public String receive() throws IOException{
 	 return fluxoEntrada.readUTF(); //Aguarda o recebimento de uma string.
 }
 
-public void send(String message) {
-	
+public void send(String message) throws IOException{
+	fluxoSaida.writeUTF(message); //Envia uma string. 
 }
 
 public void closeClientConnection() throws IOException{
@@ -58,9 +56,42 @@ public void closeServer() throws IOException{
 	 serverSocket.close();
 }
 
-public static void main(String[] args) throws IOException {
 
-Servidor server= new Servidor("localhost", 5000);
+
+
+public int getPort() {
+	return port;
+}
+
+
+public void setPort(int port) {
+	this.port = port;
+}
+
+
+public DataInputStream getFluxoEntrada() {
+	return fluxoEntrada;
+}
+
+
+public void setFluxoEntrada(DataInputStream fluxoEntrada) {
+	this.fluxoEntrada = fluxoEntrada;
+}
+
+
+public DataOutputStream getFluxoSaida() {
+	return fluxoSaida;
+}
+
+
+public void setFluxoSaida(DataOutputStream fluxoSaida) {
+	this.fluxoSaida = fluxoSaida;
+}
+
+
+public static void main(String [] args) throws IOException {
+
+Servidor server= new Servidor(5000);
 
 
 System.out.println("\n\nIniciando servidor TCP...\n");

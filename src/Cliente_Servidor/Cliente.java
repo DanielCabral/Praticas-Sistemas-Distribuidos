@@ -1,4 +1,4 @@
-package Pratica1;
+package Cliente_Servidor;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -64,8 +64,9 @@ public class Cliente {
 		fluxoSaida.writeUTF(message);
 	}
 	
-	public String receive() throws IOException{
-		return fluxoEntrada.readUTF(); //Aguarda o recebimento de uma string.
+	public String receive() throws IOException {
+		String message=fluxoEntrada.readUTF(); //Aguarda o recebimento de uma string.
+		return message;
 	}
 
 	public void close() throws IOException{
@@ -91,7 +92,7 @@ public class Cliente {
 		
 		cliente.send(msg);
 		
-		cliente.receive();
+		msg = cliente.receive();
 		
 		System.out.println("\n\n --> Mensagem recebida do servidor : "+ msg
 		+ "\n\n");
