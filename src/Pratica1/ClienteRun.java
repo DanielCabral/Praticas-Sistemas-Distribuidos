@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import Cliente_Servidor.Cliente;
 
-public class ClienteQuestao2 {
+public class ClienteRun {
 	
 	public static void main(String [] args) throws IOException {
 				
