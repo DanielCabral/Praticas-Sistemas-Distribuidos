@@ -14,7 +14,7 @@ public class Calculadora implements CalculadoraDistribuida{
 
 	@Override
 	public double subtrairDoisNumeros(double a, double b) throws RemoteException {
-		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 

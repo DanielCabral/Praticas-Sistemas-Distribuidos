@@ -14,4 +14,5 @@ public double dividirDoisNumeros(double a, double b) throws RemoteException;
 public double dividirDoisNumerosResto(double a, double b) throws RemoteException;
 public double raizQuadrada(double numero) throws RemoteException;
 public double potencia(int base, int expoente) throws RemoteException;
+
 }

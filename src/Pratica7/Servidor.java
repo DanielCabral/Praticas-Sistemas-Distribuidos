@@ -9,7 +9,7 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
-* Classe respons´avel por criar uma inst^ancia do objeto Contador e registr´a-la
+* Classe respons´avel por criar uma inst^ancia do objeto Contador e registr´a-la 
 * em um servi¸co de registro de objetos distribu´ıdos
 */
 public class Servidor {

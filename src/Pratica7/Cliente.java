@@ -34,7 +34,7 @@ public class Cliente {
 			
 					
 			System.out.println("Valor atual: " + stub.somarDoisNumeros(4, 5));
-			System.out.println("Fim da execução do cliente!");
+			System.out.println("Fim da execução do cliente!"); 
 		} catch (RemoteException | NotBoundException ex) {
 			Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
 		}
