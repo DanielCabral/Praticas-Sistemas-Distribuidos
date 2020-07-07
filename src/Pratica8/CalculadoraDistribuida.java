@@ -1,4 +1,4 @@
-package Pratica7;
+package Pratica8;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

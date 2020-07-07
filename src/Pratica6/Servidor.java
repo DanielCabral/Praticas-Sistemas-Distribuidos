@@ -10,7 +10,7 @@ public static int cont = 0;
 Socket cliente2;
 
 public Servidor(Socket cliente){
-this.socketCliente = cliente;
+	this.socketCliente = cliente;
 }
 
 public void setCliente2(Socket cliente2) {

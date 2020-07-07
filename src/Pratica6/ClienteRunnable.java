@@ -24,7 +24,7 @@ public void run() {
 		String snd;
 		
 		//Escutar servidor
-		new Thread(new Runnable() {
+		Thread t=new Thread(new Runnable() {
 			
 			@Override
 			public void run() {
@@ -32,6 +32,7 @@ public void run() {
 					Scanner s = null;
 					s = new Scanner(cliente.getInputStream());
 					String rcv;
+					System.out.println("Escutando servidor");
 					 //Exibe mensagem no console
 					while(s.hasNextLine()){
 						rcv = s.nextLine();
@@ -48,6 +49,8 @@ public void run() {
 				}
 			}
 		});
+		
+		t.start();
 		
 		while(conexao){
 			System.out.println("Digite uma mensagem: ");

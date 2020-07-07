@@ -1,4 +1,4 @@
-package Pratica7;
+package Pratica8;
 
 import java.rmi.RemoteException;
 
@@ -14,38 +14,32 @@ public class Calculadora implements CalculadoraDistribuida{
 
 	@Override
 	public double subtrairDoisNumeros(double a, double b) throws RemoteException {
-		
-		return 0;
+		return a-b;
 	}
 
 	@Override
 	public double multiplicaDoisNumeros(double a, double b) throws RemoteException {
-		// TODO Auto-generated method stub
-		return 0;
+		return a*b;
 	}
 
 	@Override
 	public double dividirDoisNumeros(double a, double b) throws RemoteException {
-		// TODO Auto-generated method stub
-		return 0;
+		return a/b;
 	}
 
 	@Override
 	public double dividirDoisNumerosResto(double a, double b) throws RemoteException {
-		// TODO Auto-generated method stub
-		return 0;
+		return a%b;
 	}
 
 	@Override
 	public double raizQuadrada(double numero) throws RemoteException {
-		// TODO Auto-generated method stub
-		return 0;
+		return Math.sqrt(numero);
 	}
 
 	@Override
 	public double potencia(int base, int expoente) throws RemoteException {
-		// TODO Auto-generated method stub
-		return 0;
+		return Math.pow(base, expoente);
 	}
 
 
